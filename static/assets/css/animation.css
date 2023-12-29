@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    /* background-color: #b5e5ff; */
+}
+
+
+
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 18%;
+    transform:  translate(-50%,50%);
+    background: #46505e;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    width: 300px;
+    padding: 0 6px;
+
+}
+
+.search{
+    /* margin-top: 10%; */
+    margin-left: 22%;
+}
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    /* background: none; */
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+
+
+
+p{
+    /* margin-left: 60%; */
+    /* margin-top: 2%; */
+    color: rgb(32, 88, 207);
+    font-family: "Montserrat";
+    font-weight: bolder;
+    text-align: center;
+}
+.title{
+    /* top: -100%; */
+    margin-top: 2%;
+    text-align: left;
+    display: block;
+    margin-left: -50%;
+    font-size: 30px;
+}
+
+.sign-title{
+    text-align: right;
+    margin-left: 50%;
+    font-size: 30px;
+    margin-top: -5%;
+}
+
+
+.form{
+    /* margin-top: 40%; */
+    text-align: center;
+    align-items: center;
+}
+
+.submit{
+    margin-left: 20%;
+    margin-top: -2%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border-color: none;
+    background-color: rgb(1, 217, 255);
+    color: black;
+}
+
+.txt-entired{
+    margin-top: 10%;
+}
+
+.td{
+    margin-top: 10%;
+}
+
+
+
+/* button */
+
+.submit{
+    text-align: center;
+    margin-left: 30%;
+}
+
+.submit button{
+    width: 150px;
+    height: 40px;
+    margin-top: 5%;
+    background-color: #12afc4;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    box-sizing: border-box;
+    border-color: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.submit button:hover{
+    transition: 1s;
+    background-color: #42e9ff;
+    box-shadow: 2px 2px 7px rgb(43, 43, 43);
+    color: rgb(11, 63, 112);
+}
+
+
+.submit-text-btn{
+    text-align: center;
+    margin-left: 30%;
+}
+
+.submit-text-btn input{
+    width: 150px;
+    height: 40px;
+    margin-top: 5%;
+    background-color: #12afc4;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    box-sizing: border-box;
+    border-color: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.submit-text-btn input:hover{
+    transition: 1s;
+    background-color: #42e9ff;
+    box-shadow: 2px 2px 7px rgb(43, 43, 43);
+    color: rgb(11, 63, 112);
+}
+
+#videoPlayer{
+    width: 620px;
+    height: 350px;
+    margin-left: 5%;
+    box-sizing: border-box;
+    /* border-radius: 20px; */
+    box-shadow: 2px 2px 7px rgb(43, 43, 43);
+    align-items: center;
+    text-align: center;
+}
+
+#sign-video{
+    width: 500px;
+    
+}
+
+
+
+
+@media screen and (max-width: 620px) {
+    .searchBox:hover > .searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+
+    .title{
+        /* top: -100%; */
+        margin-top: 4%;
+        text-align: left;
+        display: block;
+        margin-left: -50%;
+        font-size: 30px;
+    }
+    
+    .sign-title{
+        text-align: right;
+        margin-left: 50%;
+        font-size: 30px;
+        margin-top: -5%;
+    }
+
+    }
+

@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    align-items: center;
+    text-align: center;
+}
+
+.container{
+    width: 80%;
+    height: 80vh;
+    margin: 10% 10%;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 2px 2px 6px rgb(73, 73, 73);
+}
+
+/* a{
+    text-decoration: none;
+} */
+.option{
+    text-align: center;
+    display: flex;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.cng-email{
+    color: #206de9;
+    width: 200px;
+    height: 40px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    /* box-shadow: 2px 2px 4px rgb(73, 73, 73); */
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 27%;
+    padding-top: 8px;
+    border-style: solid;
+    border-color: #206de9;
+}
+
+.cng-email:hover{
+    background-color: #206de9;
+    width: 200px;
+    height: 40px;
+    color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgb(73, 73, 73);
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 27%;
+}
+.signout{
+    color: #206de9;
+    width: 200px;
+    height: 40px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    /* box-shadow: 2px 2px 4px rgba(73, 73, 73, 0.808); */
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 6px;
+    border-style: solid;
+    border-color: #206de9;
+}
+
+.signout:hover{
+    background-color: #206de9;
+    width: 200px;
+    height: 40px;
+    color: #ffffff;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 4px rgba(73, 73, 73, 0.808);
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 8px;
+}
+
+
+a{
+    text-decoration: none;
+    padding-top: 5px;
+    font-size: 18px;
+}
+
+a:hover{
+    text-decoration: none;
+    padding-top: 5px;
+    font-size: 18px;
+    color: white;
+}
+
+h1{
+    color: #206de9;
+    text-align: center;
+    /* margin-top: 20%; */
+    /* text-shadow: 1px 1px 1px rgb(0, 0, 0); */
+    font-size: 50px;
+    padding-top: 2%;
+}
+
+.container p{
+    text-align: center;
+}
+
+.btn{
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    
+}
+
+.btn button{
+    width: 250px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #23db6a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn button:hover{
+    width: 250px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #21aa56;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(73, 73, 73, 0.808);
+}
+
+
+img{
+    width: 100px;
+    height: 100px;
+    padding-top: 20px;
+}
+
+
+.icon-btn{
+    display: flex;
+}
+
+
+/* login with google */
+:root{
+
+    --white: #fff;
+    --google-blue: #4285f4;
+    --button-active-blue: #1669F2;
+}
+
+.btn-text a{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+
+}
+
+.google-btn {
+  width: 200px;
+  cursor:pointer;
+  margin-left: 27%;
+  margin-top: 2%;
+  height: 42px;
+  text-decoration: none;
+  background-color: var(--google-blue);
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: var(--white);
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+  &:hover {
+    box-shadow: 0 0 6px var(--google-blue);
+  }
+  &:active {
+    background: var(--button-active-blue);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+.btn-text a{
+    color: black;
+}
+
+.github-btn {
+  width: 200px;
+  cursor:pointer;
+  margin-left: 5%;
+  margin-top: 2%;
+  height: 42px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: var(--white);
+  }
+  .github-icon {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: -85px;
+    width: 18px;
+    height: 18px;
+    color: white;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: --white;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+    color: rgb(0, 0, 0);
+  }
+  &:hover {
+    box-shadow: 0 0 6px black;
+  }
+  &:active {
+    background: var(--button-active-blue);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+.login-or{
+    margin-top: 3%;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.login{
+    margin-top: 2%;
+}
+.login input{
+    width: 300px;
+    height: 40px;
+    margin: 5px;
+}
+
+.checkbox p{
+    text-align: center;
+    align-items: center;
+    margin-left: -7%;
+}
+.checkbox input{
+    margin-top: -10%;
+    margin-left: 10%;
+    width: 20px;
+}
+
+
+
+button{
+    width: 250px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #23db6a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 2%;
+    margin-left: 38%;
+    display: block;
+}
+
+button:hover{
+    width: 250px;
+    height: 50px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #21aa56;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(73, 73, 73, 0.808);
+}

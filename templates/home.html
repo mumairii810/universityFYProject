@@ -1,0 +1,216 @@
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title> Text To Hand Gesture</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'assets/img/logo.jpg' %}" rel="icon" />
+    <link
+      href="{% static 'assets/img/apple-touch-icon.png' %}"
+      rel="apple-touch-icon"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/glightbox/css/glightbox.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/remixicon/remixicon.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+
+  </head>
+  <style>
+
+
+.form-style button {
+  width: 300px;
+  height: 50px;
+  /* padding: 5%; */
+  background: #266dfc;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 28px;
+  font-family: "Montserrat";
+}
+
+
+    .form-style button:hover {
+      background-color: #1c56c9;
+      color: white;
+      box-shadow: 2px 2px 5px gray;
+      font-weight: bold;
+    }
+
+    video{
+      width: 550px;
+      height: 310px;
+      box-shadow: 10px 10px 5px lightblue;
+      margin: 5% 25%;
+    }
+
+    .video video{
+      border-radius: 40px; 
+      overflow: hidden; 
+    }
+
+    .welcome h2{
+      font-family:"Montserrat";
+      font-weight: bold;
+      font-size: 30px;
+      color: white;
+      display: flex;
+      text-align:center;
+      background-color: #00a6ff;
+      padding-left: 40%;
+      padding-top:15px;
+      padding-bottom:8px;
+    }
+  
+  </style>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <img src="{% static 'assets/img/logo.png' %}" alt="">
+          <h1><a href="">Text to Hand Gesture</a></h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto active" href="{% url 'index' %}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'index' %}">About</a>
+            </li>
+            <li><a class="nav-link scrollto" href="{% url 'index' %}">Services</a></li>
+
+            <li><a class="nav-link scrollto" href="{% url 'index' %}">Team</a></li>
+
+            <li>
+              <a class="nav-link scrollto" href="{% url 'index' %}"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'signup_finals' %}"
+                >Signup</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="{% url 'login_finals' %}"
+                >Login</a
+              >
+            </li>
+            <!-- <li><a class="nav-link scrollto" style="background-color: #11dbcf; margin-left:10px;" href="login.html">Get Started</a></li> -->
+            <!-- ... Other menu items ... -->
+            {% if user.is_authenticated %}
+              <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+              <li><a class="nav-link scrollto" href="{% url 'login_finals' %}">Login</a></li>
+            {% endif %}
+            <!-- ... Other menu items ... -->
+
+            <li>
+              <a class="getstarted scrollto" href="{% url 'home' %}"
+                >Get Started</a
+              >
+            </li>
+
+            <!-- <li><a class="getstarted scrollto" href="start_project">Get Started</a></li> -->
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+    <div>sdfsdf</div>
+    <h1 style=" text-shadow: 1px 2px 4px blue; color: black;">WELLCOME TO Our Project</h1>
+
+    <!-- ... Other HTML content ... -->
+
+<div class="welcome">
+  <h2>WELCOME:  {% if user_first_name != "guest" %}{{ user_first_name }}{% else %}GUEST{% endif %}</h2>
+</div>
+
+<!-- ... Other HTML content ... -->
+
+    <div class="container">
+      <div class="video">
+        <video class="center" autoplay loop>
+          <source src="{% static 'Hello.mp4' %}" type="video/mp4" />
+          
+        </video>
+      </div>
+      <br><br><br>
+      <div class="form-style" align="middle">
+        <a href="{% url 'animation' %}"
+          ><button class="button">Click to Start</button></a>
+      </div>
+    </div>
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+    <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+    <!-- Template Main JS File -->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>

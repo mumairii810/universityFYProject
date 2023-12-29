@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'assets/css/animation.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/search.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<header id="header" class="fixed-top d-flex align-items-center">
+	<div class="container d-flex align-items-center justify-content-between">
+	  <div class="logo">
+		<img src="{% static 'assets/img/logo.png' %}" alt="">
+		<h1><a href="">Text To Hand Gesture</a></h1>
+		<!-- Uncomment below if you prefer to use an image logo -->
+		<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+	  </div>
+
+	  <nav id="navbar" class="navbar">
+		<ul>
+		  <li>
+			<a class="nav-link scrollto active" href="{% url 'index' %}"
+			  >Home</a
+			>
+		  </li>
+		  <li>
+			<a class="nav-link scrollto" href="{% url 'index' %}">About</a>
+		  </li>
+		  <li><a class="nav-link scrollto" href="{% url 'index' %}">Services</a></li>
+
+		  <li><a class="nav-link scrollto" href={% url 'index' %}>Team</a></li>
+
+		  <li>
+			<a class="nav-link scrollto" href="{% url 'index' %}"
+			  >Contact</a
+			>
+		  </li>
+		  <li>
+			<a class="nav-link scrollto" href="{% url 'signup_finals' %}"
+			  >Signup</a
+			>
+		  </li>
+		  <li>
+			<a class="nav-link scrollto" href="{% url 'login_finals' %}"
+			  >Login</a
+			>
+		  </li>
+		  <!-- <li><a class="nav-link scrollto" style="background-color: #11dbcf; margin-left:10px;" href="login.html">Get Started</a></li> -->
+            <!-- ... Other menu items ... -->
+            {% if user.is_authenticated %}
+              <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+              <li><a class="nav-link scrollto" href="{% url 'login_finals' %}">Login</a></li>
+            {% endif %}
+            <!-- ... Other menu items ... -->
+		  <li>
+			<a class="getstarted scrollto" href="{% url 'home' %}"
+			  >Get Started</a
+			>
+		  </li>
+
+		  <!-- <li><a class="getstarted scrollto" href="start_project">Get Started</a></li> -->
+		</ul>
+		<i class="bi bi-list mobile-nav-toggle"></i>
+	  </nav>
+	  <!-- .navbar -->
+	</div>
+  </header>
+
+
+<div class="split left">
+	<h2 align="center" style="color:black;"> Enter Text or Use Mic</h2><br>
+		<form action="" method="post" align="left" >
+		{% csrf_token %}
+					<!-- <input type="text" name="sen" class="mytext" id="speechToText" placeholder=""> -->
+					<select id="my-dropdown" name="sen" class="mytext" id="speechToText" placeholder="">
+						<option value="">Select an option</option>
+						<option value="Hey">Hey</option>
+						<option value="Hello">Hello</option>
+						<option value="How are you">How are you</option>
+						<option value="You are wrong">You are wrong</option>
+						<option value="Change yourself">Change yourself</option>
+						<option value="Why they happy">Why they happy</option>
+						<option value="What is your age">What is your age</option>
+						<option value="Stay safe">Stay safe</option>
+						<option value="Way to learn">Way to learn</option>
+						<option value="Wash your hand">Wash your hand</option>
+						<option value="Who invent computer">Who invent computer</option>
+						<option value="All glitters not gold">All glitters not gold</option>
+						<option value="Great day">Great day</option>
+						<option value="Love you">Love you</option>
+						<option value="whose good engineer">whose good engineer</option>
+						<option value="Watch television">Watch television</option>
+						<option value="Keep distance">Keep distance</option>
+						<option value="Finish your work">Finish your work</option>
+						<option value="Whole world beautiful">Whole world beautiful</option>
+						<option value="Welcome">Welcome</option>
+						<option value="Who are you">Who are you</option>
+						<option value="Fight with yourself">Fight with yourself</option>
+						<option value="talk with me">Talk with me</option>
+						<option value="You happy">You happy</option>
+						<option value="You are engineer">You are engineer</option>
+						<option value="Before come walk with me">Before come walk with me</option>
+						<option value="Before come walk with me">Before come walk with me</option>
+						<option value="Before come walk with me">Before come walk with me</option>
+						<option value="Before come walk with me">Before come walk with me</option>
+						<option value="Good bye">Good bye</option>
+						<option value="Text to hand">text to hand</option>
+					  </select>
+					  	<!-- <button type="button" style="height:32px;" name="button" class="mic" onclick="record()"><img src="{% static 'assets/img/mic3.png' %}" height="32px" width="38px" /></button> -->
+					
+					  <input type="submit" style="margin-top:-37px; margin-left:355px;" name="submit" class="submit">
+		</form>
+		<br>
+		<table cellspacing="20px">
+			<tr>
+				<td class="td" style="color:black;">The text that you entered is:</td>
+				<td class="td" style="color:black;">{{ text }}</td>
+			</tr>
+			<tr>
+				<td class="td" style="color:black;">Key words in sentence:</td>
+				<td class="td">
+				<ul class="td" id="list" align="center" style="color:black;">
+					  {% for word in words %}
+					<li id="{{ i }}" style="margin-right: 8/px; color:black; display: inline; padding: 0; margin: 0; list-style-type: none;">{{ word }}</li>
+					  {% endfor %}
+				</ul>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+	<div class="split right">
+		<h2 align="center" style="color:black;">Sign Language Animation</h2>
+	  
+		  <div style="text-align:center;">	&nbsp&nbsp<br>
+			<button class="submit" onclick="playPause()" style="color:white; margin-left:10px;">Play/Pause</button><br><br><br>
+			<video id="videoPlayer" width="600" height="350"  preload="auto" autoplay>
+			  <source src="" type="video/mp4">
+		  Your browser does not support HTML5 video.
+			</video>
+			</div>
+	  </div>
+<script>
+	//webkitSpeechRecognition api for speech to text conversion
+	function record(){
+		var recognition = new webkitSpeechRecognition();
+		recognition.lang='en-IN';
+
+		recognition.onresult = function(event){
+			console.log(event)
+			document.getElementById('speechToText').value = event.results[0][0].transcript;
+		}
+		recognition.start();
+	 }
+	function play()
+	{
+		var videoSource = new Array();
+		var	videos = document.getElementById("list").getElementsByTagName("li");
+		var j;
+		for(j=0;j<videos.length;j++)
+		{
+			videoSource[j] = "/static/assets/" + videos[j].innerHTML +".mp4";
+		}
+
+		var i = 0; // define i
+		var videoCount = videoSource.length;
+
+		function videoPlay(videoNum)
+		{
+			document.getElementById("list").getElementsByTagName("li")[videoNum].style.color = "#09edc7";
+			document.getElementById("list").getElementsByTagName("li")[videoNum].style.fontSize = "xx-large";
+			document.getElementById("videoPlayer").setAttribute("src", videoSource[videoNum]);
+	    	document.getElementById("videoPlayer").load();
+	    	document.getElementById("videoPlayer").play();
+
+		}
+		
+		document.getElementById('videoPlayer').addEventListener('ended', myHandler, false);
+		document.getElementById("list").getElementsByTagName("li")[0].style.color = "#09edc7";
+		document.getElementById("list").getElementsByTagName("li")[0].style.fontSize = "xx-large";
+
+		videoPlay(0); // play the video
+		function myHandler()
+		{
+	 		document.getElementById("list").getElementsByTagName("li")[i].style.color = "#feda6a";
+			document.getElementById("list").getElementsByTagName("li")[i].style.fontSize = "20px";
+			i++;
+	    	if (i == videoCount)
+	    	{
+	       	    document.getElementById("videoPlayer").pause();
+	    	}
+	     	else
+	     	{
+	        	videoPlay(i);
+	    	}
+		}
+	}
+	function playPause(){
+  		if (document.getElementById("videoPlayer").paused){
+    		play();}
+  		else{
+    		document.getElementById("videoPlayer").pause();}
+		}
+	</script>
+{% endblock %}
